@@ -26,3 +26,6 @@ webpack ./src/js/app.js bundle.js
 
 ```
 open index.html in browser
+
+### step4
+全局安装webpack 后，执行webpack 即可
