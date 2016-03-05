@@ -7,3 +7,12 @@ webpack ./src/js/app.js bundle.js
 
 ```
 the bundle.js will created.
+
+### step2
+
+> this step the module has been require in the entry JS.
+
+```
+webpack ./src/js/app.js bundle.js
+
+```
