@@ -16,3 +16,13 @@ the bundle.js will created.
 webpack ./src/js/app.js bundle.js
 
 ```
+### step3
+> this step we can deal with style,we need loader for help.
+
+```
+npm install css-loader --save
+npm install style-loader --save
+webpack ./src/js/app.js bundle.js
+
+```
+open index.html in browser
