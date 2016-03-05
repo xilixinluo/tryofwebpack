@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+html,body, .container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+html{
+    font-size: 100px;
+}
+// $imgUrl:'http://s.qunarzz.com/mice_hybird_user/zhuanti/183/';
+$imgUrl:'http://q.qunarzz.com/mice_hybird_user/images/zhuanti/183/';
+$colorMap: (
+    red: #f20919,
+    deepRed: #a9132c,
+    darkShaowOfRed: #a9132c,
+    darkPurple: #4844fe,
+    shallowPurple: #b3b3ff,
+    purlple:#490d9d,
+    deepPurple: #320a6a,
+    inlightPurple: #5617b3,
+    yellow: #ffe71c,
+    highlightText: #18d6ed
+);
+@mixin flexbox {
+    display: -webkit-flexbox;
+    display: flex;
+}
+@mixin flex ($num){
+    flex: $num
+} 
+@mixin transform($content) {
+    transform: $content
+}
+// @include yo-header(
+//     $name: white,
+//     $bgcolor: #fff,
+//     $bordercolor: #fff,
+//     $color: #000,
+//     $item-ico-color: #000
+// );
+@mixin redButton {
+    margin: 0 auto;
+    border-radius: .21rem;
+    font-size: .18rem;
+    text-align: center;
+    background: map-get($colorMap, red);
+    border-bottom: 3px solid map-get($colorMap, deepRed);
+    // box-shadow: 2px 2px 5px map-get($colorMap, darkShaowOfRed);
+    box-shadow: 2px 4px 12px #000, inset 0 4px 10px rgba(255,255,255,.5);
+    color: #fff;
+    height: .42rem;
+    line-height: .42rem;
+}
+
+.hide{
+    display: none;
+}
+.wrapper{
+    overflow: hidden;
+    min-height: 100%;
+    background: url('#{$imgUrl}/mice-183_manibg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.section-theme{
+    height: 314px;
+    margin-top: .25rem;
+    width: 100%;
+    background: url('#{$imgUrl}/mice-183_theme_header_1.png');
+    background-size: contain;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+.section-form{
+    border: 2px solid #5a28ff;
+    border-radius: 6px;
+    box-shadow: 0 0 2px #6431ff;
+    width: 83.2%;
+    overflow: hidden;
+    margin: 0.05rem auto .15rem;
+    .dl{
+        height: .48rem;
+        overflow: hidden;
+        @include flexbox();
+        &:first-child{
+            border-bottom: 2px solid #5a28ff;
+            box-shadow: 0 0 2px #6431ff;
+        }
+    }
+    .input{
+        @include flex(1);
+        font-size: .18rem;
+        line-height: .18rem;
+        height: .18rem;
+        color: #5a28ff;
+        display: block;
+        margin: .15rem 0 .15rem .1rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        &::-webkit-input-placeholder {
+            color: #5a28ff;
+            font-size: .18rem;
+            line-height: .18rem;
+        }
+    }
+    .btn{
+        font-size: .14rem;
+        color: #6df3ff;
+        background-color: #4f19f0;
+        border-radius: 6px;
+        height: .38rem;
+        margin: .05rem;
+        width: .9rem;
+        line-height: .38rem;
+        text-align: center;
+    }
+}
+.main-button{
+    width: 75.7%;
+    @include redButton;
+}
+.main-tip{
+    font-size: .1rem;
+    line-height: .2rem;
+    height: .2rem;
+    margin: 0 auto;
+    color: map-get($colorMap, darkPurple);
+    text-align: center;
+    margin-top: .05rem;
+}
+.section-rule{
+    @mixin inlight {
+        box-shadow: inset 0 3px 5px map-get($colorMap, inlightPurple);
+    }
+    color: map-get($colorMap, shallowPurple);
+    margin: .15rem auto .3rem;
+    position: relative;
+    overflow:hidden;
+    .header{
+        line-height: .45rem;
+        height: 1.17rem;
+        background-color:map-get($colorMap, purlple);
+        font-size: .15rem;
+        width: 1.17rem;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: .58rem;
+        @include inlight();
+    }
+    .header-container{
+        height: .45rem;
+        overflow: hidden;
+        position: relative;
+        z-index: 5;
+    }
+    .content{
+        width: 80%;
+        height: 2.5rem;
+        position: relative;
+        z-index: 3;
+        padding: .25rem 3.7%;
+        margin-bottom: .2rem;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        font-size: .12rem;
+        background-color:map-get($colorMap, purlple);
+        position: relative;
+        top:-.1rem;
+        border-radius: .06rem;
+        li{
+            list-style-type: none;
+            margin-bottom: .2rem;
+            display: block;
+            @include flexbox();
+        }
+        @include inlight();
+        box-shadow: inset 0 3px 5px map-get($colorMap, inlightPurple), 0 5px 10px #000;
+    }
+    .ico{
+        display: block;
+        height: .16rem;
+        width: .16rem;
+        font-style: normal;
+        font-size: .12rem;
+        line-height: .16rem;
+        margin: 0 .05rem 0;
+        text-align: center;
+        border-radius: .08rem;
+        background-color: map-get($colorMap, deepPurple);
+    }
+    .text{
+        @include flex(1);
+        margin: 0;
+        font-size: .12rem;
+        line-height: .16rem;
+    }
+}
+.section-notice{
+    height: 153px;
+    width: 329px;
+    margin: 0 auto;
+    background: url('#{$imgUrl}/mice-183_notice.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    padding-top: 60px;
+    position: relative;
+    .money{
+        color: map-get($colorMap, yellow);
+        font-size: .3rem;
+        .icon{
+            font-size: .14rem;
+            font-style:normal;
+        }
+    }
+    .highlight{
+        color: map-get($colorMap, highlightText);
+    }
+    .tel{
+        font-size: .18rem;
+        line-height: .2rem;
+        height: .2rem;
+        margin-top: .05rem;
+    }
+    p{
+        margin: 0;
+        padding: 0;
+        line-height: .2rem;
+    }
+    .got{
+        text-align: center;
+        color:#fff;
+        font-size: .14rem;
+    }
+    &-btn{
+        width:75%;
+        @include redButton;
+        // box-shadow: 2px 4px 12px #000, inset 0 4px 10px rgba(255,255,255,.5);
+        position: absolute;
+        bottom: .25rem;
+        left: 50%;
+        @include transform(translateX(-50%));
+    }
+}
